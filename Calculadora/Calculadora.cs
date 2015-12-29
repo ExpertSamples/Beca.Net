@@ -49,6 +49,7 @@ namespace Calculadora
 
         internal void AñadeTermino(float operando)
         {
+
             if (String.IsNullOrWhiteSpace(operacion) || this.operando1 == null)
             {
                 this.operando1 = operando;
@@ -58,6 +59,7 @@ namespace Calculadora
             {
                 this.operando2 = operando;
             }
+            
         }
 
         internal void AñadeTermino(String operacion)
@@ -71,6 +73,7 @@ namespace Calculadora
             if (operando1 == null || !operando2.HasValue || String.IsNullOrWhiteSpace(operacion))
             {
                 //TODO devolver error
+             
             }
 
             if (operacion == "+")
