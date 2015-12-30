@@ -29,6 +29,8 @@ namespace Ejemplos.Ficheros
 
             StreamReader fichero = File.OpenText(path);
 
+            
+
             fichero.ReadLine();
 
             linea = fichero.ReadLine();

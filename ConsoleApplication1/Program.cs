@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ejemplos.DelegadoTest;
 
 namespace ConsoleApplication1
 {
@@ -18,6 +19,9 @@ namespace ConsoleApplication1
 
                 switch (expresion)
                 {
+                    case "libros":
+                        TestBookDB.Main2();
+                        break;
                     case "q":
                     case "quit":
                         salida = true;

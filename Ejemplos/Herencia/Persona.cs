@@ -25,7 +25,7 @@ namespace Ejemplos
 namespace Ejemplos.Herencia
 {
 
-
+    [Serializable]
     public class Persona
     {
         protected string nombre;
@@ -46,23 +46,23 @@ namespace Ejemplos.Herencia
 
         private Dictionary<string,NivelConocimientos> conocimientos = new Dictionary<string, NivelConocimientos>();
 
-        
+        [XmlIgnore]
         public Dictionary<string,NivelConocimientos> Conocimientos
         {
             get { return conocimientos; }
         }
 
 
-        //public void ToXML(string ruta = null)
-        //{
-        //    if (ruta == null) ruta = this.nombre + ".xml";
+        public void ToXML(string ruta = null)
+        {
+            if (ruta == null) ruta = this.nombre + ".xml";
 
-        //    XmlSerializer serial = new XmlSerializer(this.GetType());
-        //    TextWriter escritor = new StreamWriter(ruta);
+            XmlSerializer serial = new XmlSerializer(this.GetType());
+            TextWriter escritor = new StreamWriter(ruta);
 
-        //    serial.Serialize(escritor, this);
-        //    escritor.Close();
-        //}
+            serial.Serialize(escritor, this);
+            escritor.Close();
+        }
 
     }
 }

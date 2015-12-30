@@ -21,17 +21,19 @@ namespace Ejemplos.Herencia
         }
 
         protected Padre conyuge;
+        [XmlIgnore]
         public Padre Conyuge
         {
             get { return conyuge; }
             set
             {
                 conyuge = value;
-                //if (conyuge != null) this.nombreConyuge = conyuge.Nombre;
+                if (conyuge != null) this.nombreConyuge = conyuge.Nombre;
             }
         }
 
-
+        [XmlAttribute]
+        protected string nombreConyuge;
 
 
         protected List<Hijo> hijos;

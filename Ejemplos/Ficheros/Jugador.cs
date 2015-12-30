@@ -29,6 +29,8 @@ namespace Ejemplos.Ficheros
         {
             string[] elementos = linea.Split(',');
 
+            
+
             this.Id = elementos[0];
             this.Nombre = elementos[13];
             this.Apellido = elementos[14];
