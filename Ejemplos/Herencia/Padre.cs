@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Ejemplos.Herencia
 {
+    [Serializable]
     public class Padre: Persona
     {
         //Cambio tipo, quito ctor, propiedad en el indexador, Propiedad Alfa.
@@ -22,13 +24,26 @@ namespace Ejemplos.Herencia
         public Padre Conyuge
         {
             get { return conyuge; }
-            set { conyuge = value; }
+            set
+            {
+                conyuge = value;
+                //if (conyuge != null) this.nombreConyuge = conyuge.Nombre;
+            }
         }
 
+
+
+
         protected List<Hijo> hijos;
+        
         public List<Hijo> Hijos
         {
             get { return hijos; }
+        }
+
+        public Padre()
+        {
+
         }
 
         public Padre(bool isAlpha = false)

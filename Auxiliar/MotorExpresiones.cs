@@ -36,27 +36,40 @@ namespace Ejemplos
             int resultado = 0;
             string elemento;
             List<int> operandos = new List<int>();
+            Stack<String> abaco = new Stack<string>();
+
 
             RellenaPila();
 
-            while (pila.Count > 1)
+            while (pila.Count > 0)
             {
                 elemento = pila.Pop();
 
                 if (IsOperador(elemento))
                 {
+                    for (int i = 0; i < NumeroOperandos(elemento); i++)
+                    {
+                        operandos.Add(int.Parse(abaco.Pop()));
+                    }
                     pila.Push(RealizaOperacion(operandos, elemento).ToString());
+
+                    for (int j = 0; j < abaco.Count; j++)
+                    {
+                        pila.Push(abaco.Pop());
+                    }
+
                 }
                 else
                 {
-                    operandos.Add(int.Parse(elemento));
+                    abaco.Push(elemento);
                 }
-
             }
 
-            if (pila.Count == 1)
+
+
+            if (abaco.Count == 1)
             {
-                resultado = int.Parse(pila.Pop());
+                resultado = int.Parse(abaco.Pop());
             }
             else
             {
@@ -68,14 +81,36 @@ namespace Ejemplos
 
         private void RellenaPila()
         {
+
             String[] miembros = expresion.Split(',');
 
-            foreach (String miembro in miembros)
+            for (int i = miembros.Length; i > 0; i--)
             {
-                pila.Push(miembro);
+                pila.Push(miembros[i - 1]);
             }
 
         }
+
+
+        private int NumeroOperandos(string operador)
+        {
+            int numero = 2;
+
+            switch (operador)
+            {
+                case "S":
+                    numero = 1;
+                    break;
+                case "*":
+                case "+":
+                case "-":
+                default:
+                    break;
+            }
+
+            return numero;
+        }
+
 
         private bool IsOperador(string miembro)
         {
@@ -103,6 +138,7 @@ namespace Ejemplos
                     break;
             }
 
+            operandos.Clear();
 
             return resultado;
         }
