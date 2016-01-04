@@ -25,23 +25,36 @@ namespace Ejemplos.Ficheros
         public Destreza Bateador { get; set; }
         public Destreza Lanzador { get; set; }
 
-        public void FromString(string linea)
+
+        internal void FromLineaCsv(int i, LectorCsv lector)
         {
-            string[] elementos = linea.Split(',');
+            this.Id = lector[i, "playerID"];
+            this.Nombre = lector[i, "nameFirst"];
+            this.Apellido = lector[i, "nameLast"];
+            this.Apodo = lector[i, "nameGiven"];
 
+            int altura;
+            if (int.TryParse(lector[i, "height"],out altura))
+            {
+                this.Altura = altura;
+            }
+
+            int año,mes,dia;
+            if (int.TryParse(lector[i, "birthYear"], out año) && int.TryParse(lector[i, "birthMonth"], out mes) && int.TryParse(lector[i, "birthDay"], out dia))
+            {
+                this.FechaNacimiento = new DateTime(año, mes, dia);
+            }
+
+            this.CiudadNacimiento = lector[i, "birthCity"];
+
+            int peso;
+            if (int.TryParse(lector[i, "weight"], out peso))
+            {
+                this.Peso = peso;
+            }
             
-
-            this.Id = elementos[0];
-            this.Nombre = elementos[13];
-            this.Apellido = elementos[14];
-            this.Apodo = elementos[15];
-            this.Altura = int.Parse(elementos[17]);
-            this.FechaNacimiento = new DateTime(int.Parse(elementos[1]), int.Parse(elementos[2]), int.Parse(elementos[3]));
-            this.CiudadNacimiento = elementos[6];
-            this.Peso = int.Parse(elementos[16]);
-            this.Bateador = (elementos[18] == "R") ? Destreza.Diestro : Destreza.Zurdo;
-            this.Lanzador = (elementos[19] == "R") ? Destreza.Diestro : Destreza.Zurdo;
-
+            this.Bateador = (lector[i, "bats"] == "R") ? Destreza.Diestro : Destreza.Zurdo;
+            this.Lanzador = (lector[i, "throws"] == "R") ? Destreza.Diestro : Destreza.Zurdo;
         }
 
         public override string ToString()

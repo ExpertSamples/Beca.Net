@@ -23,29 +23,23 @@ namespace Ejemplos.Ficheros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String linea;
             Jugador jugador;
+            
             string path = @"d:\trabajo\master.csv";
 
-            StreamReader fichero = File.OpenText(path);
+            LectorCsv lector = new LectorCsv(path, ',');
+            lector.ProcesaFichero();
 
-            
-
-            fichero.ReadLine();
-
-            linea = fichero.ReadLine();
-            while (linea != null)
+            for(int i = 0; i < lector.Count; i++)
             {
-
                 jugador = new Jugador();
 
-                jugador.FromString(linea);
-                jugadores.Add(jugador);
+                jugador.FromLineaCsv(i, lector);
 
-                linea = fichero.ReadLine();
+                jugadores.Add(jugador);
             }
 
-            fichero.Close();
+           
 
             listBox1.DataSource = jugadores;
             
