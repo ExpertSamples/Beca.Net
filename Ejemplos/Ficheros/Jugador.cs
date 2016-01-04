@@ -9,7 +9,8 @@ namespace Ejemplos.Ficheros
     public enum Destreza
     {
         Diestro,
-        Zurdo
+        Zurdo,
+        Ambidiestro
     }
 
     public class Jugador
@@ -52,9 +53,25 @@ namespace Ejemplos.Ficheros
             {
                 this.Peso = peso;
             }
-            
-            this.Bateador = (lector[i, "bats"] == "R") ? Destreza.Diestro : Destreza.Zurdo;
-            this.Lanzador = (lector[i, "throws"] == "R") ? Destreza.Diestro : Destreza.Zurdo;
+
+            this.Bateador = ConvierteDestreza(lector[i, "bats"]);
+            this.Lanzador = ConvierteDestreza(lector[i, "throws"]); 
+        }
+
+        protected Destreza ConvierteDestreza(string destreza)
+        {
+            switch (destreza)
+            {
+                case "L":
+                    return Destreza.Zurdo;
+                    break;
+                case "B":
+                    return Destreza.Ambidiestro;
+                    break;
+                default:
+                    return Destreza.Diestro;
+                    break;
+            }
         }
 
         public override string ToString()
