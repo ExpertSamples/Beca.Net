@@ -62,6 +62,13 @@
     <Compile Include="Herencia\Hijo.cs" />
     <Compile Include="Herencia\Padre.cs" />
     <Compile Include="Herencia\Persona.cs" />
+    <Compile Include="Linq\Clases.cs" />
+    <Compile Include="Linq\frmEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Linq\frmEquipos.Designer.cs">
+      <DependentUpon>frmEquipos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Ficheros\Form1.resx">
@@ -69,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Linq\frmEquipos.resx">
+      <DependentUpon>frmEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +108,7 @@
       <Name>Auxiliar</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

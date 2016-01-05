@@ -17,8 +17,17 @@ namespace ConsoleApplication1
             {
                 string expresion = Console.ReadLine();
 
+                string[] elementos = expresion.Split(' ');
+                expresion = elementos[0];
+
                 switch (expresion)
                 {
+                    case "s":
+                        int numero = elementos[1].ToInt();
+                        int hasta = elementos[2].ToInt();
+
+                        Console.WriteLine(numero.To(hasta).Sum());
+                        break;
                     case "libros":
                         TestBookDB.Main2();
                         break;

@@ -24,13 +24,13 @@ namespace Ejemplos.Ficheros
         private void button1_Click(object sender, EventArgs e)
         {
             Jugador jugador;
-            
+
             string path = @"d:\trabajo\master.csv";
 
             LectorCsv lector = new LectorCsv(path, ',');
             lector.ProcesaFichero();
 
-            for(int i = 0; i < lector.Count; i++)
+            for (int i = 0; i < lector.Count; i++)
             {
                 jugador = new Jugador();
 
@@ -39,10 +39,19 @@ namespace Ejemplos.Ficheros
                 jugadores.Add(jugador);
             }
 
-           
+            DateTime fechaLimite = new DateTime(1970, 01, 01);
 
-            listBox1.DataSource = jugadores;
+            //var filtro = jugadores.Where(j => j.Bateador == Destreza.Diestro && j.FechaNacimiento > fechaLimite);
+
+            var filtro = from j in jugadores
+                         where j.Bateador == Destreza.Diestro
+                            && j.FechaNacimiento > fechaLimite
+                         select new { j.Nombre, j.FechaNacimiento };
+
             
+
+            listBox1.DataSource = filtro.ToList();
+
         }
 
 

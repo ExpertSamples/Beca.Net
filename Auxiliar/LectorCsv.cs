@@ -49,7 +49,7 @@ namespace Ejemplos
             {
                 if (index >= lineas.Count) return null;
 
-                int indiceColumna = columnas.IndexOf(nombreColumna);
+                int indiceColumna = columnas.IndexOf(nombreColumna.ToLower());
 
                 if (indiceColumna < 0) return null;
 
@@ -100,7 +100,7 @@ namespace Ejemplos
 
             foreach (string cabecera in cabeceras)
             {
-                columnas.Add(cabecera);
+                columnas.Add(cabecera.ToLower());
             }
         }
 

@@ -27,18 +27,20 @@ namespace Ejemplos.Ficheros
         public Destreza Lanzador { get; set; }
 
 
-        internal void FromLineaCsv(int i, LectorCsv lector)
+        public Jugador FromLineaCsv(int i, LectorCsv lector)
         {
             this.Id = lector[i, "playerID"];
             this.Nombre = lector[i, "nameFirst"];
             this.Apellido = lector[i, "nameLast"];
             this.Apodo = lector[i, "nameGiven"];
 
-            int altura;
-            if (int.TryParse(lector[i, "height"],out altura))
-            {
-                this.Altura = altura;
-            }
+            //int altura;
+            //if (int.TryParse(lector[i, "height"],out altura))
+            //{
+            //    this.Altura = altura;
+            //}
+
+            this.Altura = lector[i, "height"].ToInt();
 
             int año,mes,dia;
             if (int.TryParse(lector[i, "birthYear"], out año) && int.TryParse(lector[i, "birthMonth"], out mes) && int.TryParse(lector[i, "birthDay"], out dia))
@@ -55,7 +57,9 @@ namespace Ejemplos.Ficheros
             }
 
             this.Bateador = ConvierteDestreza(lector[i, "bats"]);
-            this.Lanzador = ConvierteDestreza(lector[i, "throws"]); 
+            this.Lanzador = ConvierteDestreza(lector[i, "throws"]);
+
+            return this;
         }
 
         protected Destreza ConvierteDestreza(string destreza)
