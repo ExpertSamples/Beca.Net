@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BusquedaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAO\BusquedaEmpleados.Designer.cs">
+      <DependentUpon>BusquedaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DetalleEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAO\DetalleEmpleado.Designer.cs">
+      <DependentUpon>DetalleEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ficheros\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DAO\BusquedaEmpleados.resx">
+      <DependentUpon>BusquedaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\DetalleEmpleado.resx">
+      <DependentUpon>DetalleEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ficheros\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +124,10 @@
     <ProjectReference Include="..\Auxiliar\Auxiliar.csproj">
       <Project>{0e13ce51-2091-4669-acf4-3b6a17cfa266}</Project>
       <Name>Auxiliar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejemplos.DAO\Ejemplos.DAO.csproj">
+      <Project>{be1fa886-2e97-4b58-95e2-a390591d518a}</Project>
+      <Name>Ejemplos.DAO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

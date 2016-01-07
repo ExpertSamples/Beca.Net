@@ -67,8 +67,8 @@ namespace ConsoleApplication1
                             //}
 
                             SqlDataAdapter adapter = new SqlDataAdapter(command);
-                            
-                            adapter.Fill(datos,"vEmployee");
+
+                            adapter.Fill(datos, "vEmployee");
 
 
 
@@ -76,8 +76,9 @@ namespace ConsoleApplication1
                             connection.Close();
                         }
 
-                        foreach (DataRow fila in datos.Tables[0].Rows)
+                        foreach (vEmpleado.vEmployeeRow fila in datos.vEmployee.Rows)
                         {
+                            
                             Console.WriteLine(fila["FirstName"]);
                         }
 

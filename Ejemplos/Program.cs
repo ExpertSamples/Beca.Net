@@ -18,7 +18,8 @@ namespace Ejemplos
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //Application.Run(new Ejemplos.Ficheros.Form1());
-            Application.Run(new Ejemplos.Linq.frmEquipos());
+            //Application.Run(new Ejemplos.Linq.frmEquipos());
+            Application.Run(new Ejemplos.DAO.BusquedaEmpleados());
         }
     }
 }
