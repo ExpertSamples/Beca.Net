@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ejemplos.DelegadoTest;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ConsoleApplication1
 {
@@ -22,6 +25,63 @@ namespace ConsoleApplication1
 
                 switch (expresion)
                 {
+                    case "ad":
+                        
+                        
+                        
+
+                        break;
+                    case "bd":
+
+                        String conexion = ConfigurationManager.ConnectionStrings["AdWorks"].ConnectionString;
+
+                        String tipoTelefono = (elementos.Length > 1) ? elementos[1] : null;
+                        List<String> listaNombres = new List<string>();
+                        vEmpleado datos = new vEmpleado();
+
+                        
+
+                        using (SqlConnection connection = new SqlConnection(conexion))
+                        {
+                            SqlCommand command = connection.CreateCommand();
+                            command.CommandType = CommandType.Text;
+
+
+                            command.CommandText = "select * from HumanResources.vEmployee where 1=1";
+                            
+                            if (!String.IsNullOrWhiteSpace(tipoTelefono))
+                            {
+                                command.CommandText += " and PhoneNumberType = @TipoTelefono";
+                                command.Parameters.AddWithValue("TipoTelefono", tipoTelefono);
+                            }
+
+                            connection.Open();
+                            //SqlDataReader reader = command.ExecuteReader();
+
+                            //while (reader.Read())
+                            //{
+                            //    var fila = datos.vEmployee.NewvEmployeeRow();
+                            //    fila.FirstName = reader["FirstName"].ToString();
+
+                            //    datos.vEmployee.Rows.Add(fila);
+                            //}
+
+                            SqlDataAdapter adapter = new SqlDataAdapter(command);
+                            
+                            adapter.Fill(datos,"vEmployee");
+
+
+
+                            //reader.Close();
+                            connection.Close();
+                        }
+
+                        foreach (DataRow fila in datos.Tables[0].Rows)
+                        {
+                            Console.WriteLine(fila["FirstName"]);
+                        }
+
+                        break;
                     case "s":
                         int numero = elementos[1].ToInt();
                         int hasta = elementos[2].ToInt();
