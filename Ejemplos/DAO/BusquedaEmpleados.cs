@@ -15,12 +15,20 @@ namespace Ejemplos.DAO
     {
         Empleados empleados;
 
+
         public BusquedaEmpleados()
         {
             InitializeComponent();
         }
 
         private void BusquedaEmpleados_Load(object sender, EventArgs e)
+        {
+
+            GetAll();
+
+        }
+
+        private void GetAll()
         {
             Empleado empleado = new Empleado();
 
@@ -40,6 +48,56 @@ namespace Ejemplos.DAO
             detalle.Empleado = empleados.Employee.FirstOrDefault(em => em.BusinessEntityID == persona.BusinessEntityID);
 
             detalle.ShowDialog(this);
+
+            GetAll();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            AdventureWorks2014Entities contexto = new AdventureWorks2014Entities();
+
+            //contexto.Database.Log = Console.Write;
+
+            var personas = contexto.Person.Where(p => p.Employee != null);
+            
+            List<Person> listado = personas.ToList();
+
+            lstEmpleados.DataSource = listado;
+            lstEmpleados.DisplayMember = "FullName";
+
+            contexto.Dispose();
+            //using (AdventureWorks2014Entities contexto = new AdventureWorks2014Entities())
+            //{
+            //    contexto.Database.Log = Console.Write;
+
+            //    var lista = from comercial in contexto.SalesPerson
+            //                where comercial.Employee.HireDate > new DateTime(2000, 01, 01)
+            //                select comercial;
+
+            //    //var listb = from l in lista
+            //    //        where l.Bonus > 100
+            //    //        select l.Employee.Person.FirstName;
+
+
+            //    var listc = lista.ToList();
+
+            //    var lisd = from c in listc
+            //               where c.Bonus > 100
+            //               select c.Employee.Person.FirstName;
+
+            //    int i = 0;
+            //    foreach (SalesPerson comercial in listc)
+            //    {
+            //        i++;
+            //        var liste = (from c in listc
+            //                    where c.Bonus > i * 10
+            //                    select c.Employee.Person.FirstName).FirstOrDefault();
+            //    }
+
+            //    lstEmpleados.DataSource = lista.ToList();
+            //    lstEmpleados.DisplayMember = "BusinessEntityId";
+            //}
+
         }
     }
 }

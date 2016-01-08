@@ -3385,7 +3385,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AdventureWorks2014Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Ejemplos.AdventureWorksModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <ComplexType Name="ufnGetContactInformation_Result">
           <Property Name="PersonID" Type="Int32" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -6420,7 +6420,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             <End Role="SpecialOffer" EntitySet="SpecialOffer" />
             <End Role="SpecialOfferProduct" EntitySet="SpecialOfferProduct" />
           </AssociationSet>
-          <FunctionImport Name="ufnGetContactInformation" IsComposable="true" ReturnType="Collection(AdventureWorks2014Model.ufnGetContactInformation_Result)">
+          <FunctionImport Name="ufnGetContactInformation" IsComposable="true" ReturnType="Collection(Ejemplos.AdventureWorksModel.ufnGetContactInformation_Result)">
             <Parameter Name="PersonID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
@@ -6439,11 +6439,11 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(AdventureWorks2014Model.sp_helpdiagramdefinition_Result)">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Ejemplos.AdventureWorksModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(AdventureWorks2014Model.sp_helpdiagrams_Result)">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Ejemplos.AdventureWorksModel.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -6453,17 +6453,17 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="uspGetBillOfMaterials" ReturnType="Collection(AdventureWorks2014Model.uspGetBillOfMaterials_Result)">
+          <FunctionImport Name="uspGetBillOfMaterials" ReturnType="Collection(Ejemplos.AdventureWorksModel.uspGetBillOfMaterials_Result)">
             <Parameter Name="StartProductID" Mode="In" Type="Int32" />
             <Parameter Name="CheckDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="uspGetEmployeeManagers" ReturnType="Collection(AdventureWorks2014Model.uspGetEmployeeManagers_Result)">
+          <FunctionImport Name="uspGetEmployeeManagers" ReturnType="Collection(Ejemplos.AdventureWorksModel.uspGetEmployeeManagers_Result)">
             <Parameter Name="BusinessEntityID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="uspGetManagerEmployees" ReturnType="Collection(AdventureWorks2014Model.uspGetManagerEmployees_Result)">
+          <FunctionImport Name="uspGetManagerEmployees" ReturnType="Collection(Ejemplos.AdventureWorksModel.uspGetManagerEmployees_Result)">
             <Parameter Name="BusinessEntityID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="uspGetWhereUsedProductID" ReturnType="Collection(AdventureWorks2014Model.uspGetWhereUsedProductID_Result)">
+          <FunctionImport Name="uspGetWhereUsedProductID" ReturnType="Collection(Ejemplos.AdventureWorksModel.uspGetWhereUsedProductID_Result)">
             <Parameter Name="StartProductID" Mode="In" Type="Int32" />
             <Parameter Name="CheckDate" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -6500,7 +6500,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             <Parameter Name="MaritalStatus" Mode="In" Type="String" />
             <Parameter Name="Gender" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="AMA_GetProductsByCategory" ReturnType="Collection(AdventureWorks2014Model.AMA_GetProductsByCategory_Result)">
+          <FunctionImport Name="AMA_GetProductsByCategory" ReturnType="Collection(Ejemplos.AdventureWorksModel.AMA_GetProductsByCategory_Result)">
             <Parameter Name="CategoryID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -6567,7 +6567,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AdventureWorks2014ModelStoreContainer" CdmEntityContainer="AdventureWorks2014Entities">
           <EntitySetMapping Name="AWBuildVersion">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.AWBuildVersion">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.AWBuildVersion">
               <MappingFragment StoreEntitySet="AWBuildVersion">
                 <ScalarProperty Name="SystemInformationID" ColumnName="SystemInformationID" />
                 <ScalarProperty Name="Database_Version" ColumnName="Database Version" />
@@ -6577,7 +6577,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DatabaseLog">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.DatabaseLog">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.DatabaseLog">
               <MappingFragment StoreEntitySet="DatabaseLog">
                 <ScalarProperty Name="DatabaseLogID" ColumnName="DatabaseLogID" />
                 <ScalarProperty Name="PostTime" ColumnName="PostTime" />
@@ -6591,7 +6591,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ErrorLog">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ErrorLog">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ErrorLog">
               <MappingFragment StoreEntitySet="ErrorLog">
                 <ScalarProperty Name="ErrorLogID" ColumnName="ErrorLogID" />
                 <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
@@ -6606,7 +6606,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MiTabla">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.MiTabla">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.MiTabla">
               <MappingFragment StoreEntitySet="MiTabla">
                 <ScalarProperty Name="I1" ColumnName="I1" />
                 <ScalarProperty Name="C1" ColumnName="C1" />
@@ -6614,7 +6614,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.sysdiagrams">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -6625,7 +6625,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Department">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Department">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6635,7 +6635,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employee">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Employee">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="NationalIDNumber" ColumnName="NationalIDNumber" />
@@ -6657,7 +6657,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeeDepartmentHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.EmployeeDepartmentHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.EmployeeDepartmentHistory">
               <MappingFragment StoreEntitySet="EmployeeDepartmentHistory">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
@@ -6669,7 +6669,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeePayHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.EmployeePayHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.EmployeePayHistory">
               <MappingFragment StoreEntitySet="EmployeePayHistory">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="RateChangeDate" ColumnName="RateChangeDate" />
@@ -6680,7 +6680,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JobCandidate">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.JobCandidate">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.JobCandidate">
               <MappingFragment StoreEntitySet="JobCandidate">
                 <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
@@ -6690,7 +6690,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shift">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Shift">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Shift">
               <MappingFragment StoreEntitySet="Shift">
                 <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6701,7 +6701,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Address">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Address">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Address">
               <MappingFragment StoreEntitySet="Address">
                 <ScalarProperty Name="AddressID" ColumnName="AddressID" />
                 <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
@@ -6716,7 +6716,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AddressType">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.AddressType">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.AddressType">
               <MappingFragment StoreEntitySet="AddressType">
                 <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6726,7 +6726,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BusinessEntity">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.BusinessEntity">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.BusinessEntity">
               <MappingFragment StoreEntitySet="BusinessEntity">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="rowguid" ColumnName="rowguid" />
@@ -6735,7 +6735,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BusinessEntityAddress">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.BusinessEntityAddress">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.BusinessEntityAddress">
               <MappingFragment StoreEntitySet="BusinessEntityAddress">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="AddressID" ColumnName="AddressID" />
@@ -6746,7 +6746,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BusinessEntityContact">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.BusinessEntityContact">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.BusinessEntityContact">
               <MappingFragment StoreEntitySet="BusinessEntityContact">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
@@ -6757,7 +6757,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ContactType">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ContactType">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ContactType">
               <MappingFragment StoreEntitySet="ContactType">
                 <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6766,7 +6766,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CountryRegion">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.CountryRegion">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.CountryRegion">
               <MappingFragment StoreEntitySet="CountryRegion">
                 <ScalarProperty Name="CountryRegionCode" ColumnName="CountryRegionCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6775,7 +6775,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmailAddress">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.EmailAddress">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.EmailAddress">
               <MappingFragment StoreEntitySet="EmailAddress">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="EmailAddressID" ColumnName="EmailAddressID" />
@@ -6786,7 +6786,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Password">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Password">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Password">
               <MappingFragment StoreEntitySet="Password">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
@@ -6797,7 +6797,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Person">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Person">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Person">
               <MappingFragment StoreEntitySet="Person">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="PersonType" ColumnName="PersonType" />
@@ -6816,7 +6816,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PersonPhone">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.PersonPhone">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.PersonPhone">
               <MappingFragment StoreEntitySet="PersonPhone">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
@@ -6826,7 +6826,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhoneNumberType">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.PhoneNumberType">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.PhoneNumberType">
               <MappingFragment StoreEntitySet="PhoneNumberType">
                 <ScalarProperty Name="PhoneNumberTypeID" ColumnName="PhoneNumberTypeID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6835,7 +6835,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StateProvince">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.StateProvince">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.StateProvince">
               <MappingFragment StoreEntitySet="StateProvince">
                 <ScalarProperty Name="StateProvinceID" ColumnName="StateProvinceID" />
                 <ScalarProperty Name="StateProvinceCode" ColumnName="StateProvinceCode" />
@@ -6849,7 +6849,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BillOfMaterials">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.BillOfMaterials">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.BillOfMaterials">
               <MappingFragment StoreEntitySet="BillOfMaterials">
                 <ScalarProperty Name="BillOfMaterialsID" ColumnName="BillOfMaterialsID" />
                 <ScalarProperty Name="ProductAssemblyID" ColumnName="ProductAssemblyID" />
@@ -6864,7 +6864,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Culture">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Culture">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Culture">
               <MappingFragment StoreEntitySet="Culture">
                 <ScalarProperty Name="CultureID" ColumnName="CultureID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6873,7 +6873,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Illustration">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Illustration">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Illustration">
               <MappingFragment StoreEntitySet="Illustration">
                 <ScalarProperty Name="IllustrationID" ColumnName="IllustrationID" />
                 <ScalarProperty Name="Diagram" ColumnName="Diagram" />
@@ -6882,7 +6882,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Location">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Location">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Location">
               <MappingFragment StoreEntitySet="Location">
                 <ScalarProperty Name="LocationID" ColumnName="LocationID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6893,7 +6893,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Product">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6924,7 +6924,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductCategory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductCategory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductCategory">
               <MappingFragment StoreEntitySet="ProductCategory">
                 <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6934,7 +6934,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductCostHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductCostHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductCostHistory">
               <MappingFragment StoreEntitySet="ProductCostHistory">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
@@ -6945,7 +6945,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductDescription">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductDescription">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductDescription">
               <MappingFragment StoreEntitySet="ProductDescription">
                 <ScalarProperty Name="ProductDescriptionID" ColumnName="ProductDescriptionID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -6955,7 +6955,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductInventory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductInventory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductInventory">
               <MappingFragment StoreEntitySet="ProductInventory">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="LocationID" ColumnName="LocationID" />
@@ -6968,7 +6968,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductListPriceHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductListPriceHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductListPriceHistory">
               <MappingFragment StoreEntitySet="ProductListPriceHistory">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
@@ -6979,7 +6979,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductModel">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductModel">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductModel">
               <MappingFragment StoreEntitySet="ProductModel">
                 <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -6991,7 +6991,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductModelIllustration">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductModelIllustration">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductModelIllustration">
               <MappingFragment StoreEntitySet="ProductModelIllustration">
                 <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
                 <ScalarProperty Name="IllustrationID" ColumnName="IllustrationID" />
@@ -7000,7 +7000,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductModelProductDescriptionCulture">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductModelProductDescriptionCulture">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductModelProductDescriptionCulture">
               <MappingFragment StoreEntitySet="ProductModelProductDescriptionCulture">
                 <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
                 <ScalarProperty Name="ProductDescriptionID" ColumnName="ProductDescriptionID" />
@@ -7010,7 +7010,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductPhoto">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductPhoto">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductPhoto">
               <MappingFragment StoreEntitySet="ProductPhoto">
                 <ScalarProperty Name="ProductPhotoID" ColumnName="ProductPhotoID" />
                 <ScalarProperty Name="ThumbNailPhoto" ColumnName="ThumbNailPhoto" />
@@ -7022,7 +7022,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductProductPhoto">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductProductPhoto">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductProductPhoto">
               <MappingFragment StoreEntitySet="ProductProductPhoto">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductPhotoID" ColumnName="ProductPhotoID" />
@@ -7032,7 +7032,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductReview">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductReview">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductReview">
               <MappingFragment StoreEntitySet="ProductReview">
                 <ScalarProperty Name="ProductReviewID" ColumnName="ProductReviewID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -7046,7 +7046,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductSubcategory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductSubcategory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductSubcategory">
               <MappingFragment StoreEntitySet="ProductSubcategory">
                 <ScalarProperty Name="ProductSubcategoryID" ColumnName="ProductSubcategoryID" />
                 <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
@@ -7057,7 +7057,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ScrapReason">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ScrapReason">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ScrapReason">
               <MappingFragment StoreEntitySet="ScrapReason">
                 <ScalarProperty Name="ScrapReasonID" ColumnName="ScrapReasonID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7066,7 +7066,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TransactionHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.TransactionHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.TransactionHistory">
               <MappingFragment StoreEntitySet="TransactionHistory">
                 <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -7081,7 +7081,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TransactionHistoryArchive">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.TransactionHistoryArchive">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.TransactionHistoryArchive">
               <MappingFragment StoreEntitySet="TransactionHistoryArchive">
                 <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -7096,7 +7096,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UnitMeasure">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.UnitMeasure">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.UnitMeasure">
               <MappingFragment StoreEntitySet="UnitMeasure">
                 <ScalarProperty Name="UnitMeasureCode" ColumnName="UnitMeasureCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7105,7 +7105,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WorkOrder">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.WorkOrder">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.WorkOrder">
               <MappingFragment StoreEntitySet="WorkOrder">
                 <ScalarProperty Name="WorkOrderID" ColumnName="WorkOrderID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -7121,7 +7121,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WorkOrderRouting">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.WorkOrderRouting">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.WorkOrderRouting">
               <MappingFragment StoreEntitySet="WorkOrderRouting">
                 <ScalarProperty Name="WorkOrderID" ColumnName="WorkOrderID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -7139,7 +7139,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductVendor">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductVendor">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductVendor">
               <MappingFragment StoreEntitySet="ProductVendor">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
@@ -7156,7 +7156,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PurchaseOrderDetail">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.PurchaseOrderDetail">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.PurchaseOrderDetail">
               <MappingFragment StoreEntitySet="PurchaseOrderDetail">
                 <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
                 <ScalarProperty Name="PurchaseOrderDetailID" ColumnName="PurchaseOrderDetailID" />
@@ -7173,7 +7173,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PurchaseOrderHeader">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.PurchaseOrderHeader">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.PurchaseOrderHeader">
               <MappingFragment StoreEntitySet="PurchaseOrderHeader">
                 <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
                 <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
@@ -7192,7 +7192,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ShipMethod">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ShipMethod">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ShipMethod">
               <MappingFragment StoreEntitySet="ShipMethod">
                 <ScalarProperty Name="ShipMethodID" ColumnName="ShipMethodID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7204,7 +7204,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vendor">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Vendor">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Vendor">
               <MappingFragment StoreEntitySet="Vendor">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
@@ -7218,7 +7218,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CountryRegionCurrency">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.CountryRegionCurrency">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.CountryRegionCurrency">
               <MappingFragment StoreEntitySet="CountryRegionCurrency">
                 <ScalarProperty Name="CountryRegionCode" ColumnName="CountryRegionCode" />
                 <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
@@ -7227,7 +7227,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CreditCard">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.CreditCard">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.CreditCard">
               <MappingFragment StoreEntitySet="CreditCard">
                 <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
                 <ScalarProperty Name="CardType" ColumnName="CardType" />
@@ -7239,7 +7239,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Currency">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Currency">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Currency">
               <MappingFragment StoreEntitySet="Currency">
                 <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7248,7 +7248,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurrencyRate">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.CurrencyRate">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.CurrencyRate">
               <MappingFragment StoreEntitySet="CurrencyRate">
                 <ScalarProperty Name="CurrencyRateID" ColumnName="CurrencyRateID" />
                 <ScalarProperty Name="CurrencyRateDate" ColumnName="CurrencyRateDate" />
@@ -7261,7 +7261,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customer">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Customer">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
@@ -7274,7 +7274,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PersonCreditCard">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.PersonCreditCard">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.PersonCreditCard">
               <MappingFragment StoreEntitySet="PersonCreditCard">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
@@ -7283,7 +7283,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesOrderDetail">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesOrderDetail">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesOrderDetail">
               <MappingFragment StoreEntitySet="SalesOrderDetail">
                 <ScalarProperty Name="SalesOrderID" ColumnName="SalesOrderID" />
                 <ScalarProperty Name="SalesOrderDetailID" ColumnName="SalesOrderDetailID" />
@@ -7300,7 +7300,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesOrderHeader">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesOrderHeader">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesOrderHeader">
               <MappingFragment StoreEntitySet="SalesOrderHeader">
                 <ScalarProperty Name="SalesOrderID" ColumnName="SalesOrderID" />
                 <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
@@ -7332,7 +7332,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesOrderHeaderSalesReason">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesOrderHeaderSalesReason">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesOrderHeaderSalesReason">
               <MappingFragment StoreEntitySet="SalesOrderHeaderSalesReason">
                 <ScalarProperty Name="SalesOrderID" ColumnName="SalesOrderID" />
                 <ScalarProperty Name="SalesReasonID" ColumnName="SalesReasonID" />
@@ -7341,7 +7341,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesPerson">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesPerson">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesPerson">
               <MappingFragment StoreEntitySet="SalesPerson">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
@@ -7356,7 +7356,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesPersonQuotaHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesPersonQuotaHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesPersonQuotaHistory">
               <MappingFragment StoreEntitySet="SalesPersonQuotaHistory">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="QuotaDate" ColumnName="QuotaDate" />
@@ -7367,7 +7367,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesReason">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesReason">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesReason">
               <MappingFragment StoreEntitySet="SalesReason">
                 <ScalarProperty Name="SalesReasonID" ColumnName="SalesReasonID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7377,7 +7377,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesTaxRate">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesTaxRate">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesTaxRate">
               <MappingFragment StoreEntitySet="SalesTaxRate">
                 <ScalarProperty Name="SalesTaxRateID" ColumnName="SalesTaxRateID" />
                 <ScalarProperty Name="StateProvinceID" ColumnName="StateProvinceID" />
@@ -7390,7 +7390,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesTerritory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesTerritory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesTerritory">
               <MappingFragment StoreEntitySet="SalesTerritory">
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7406,7 +7406,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesTerritoryHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SalesTerritoryHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SalesTerritoryHistory">
               <MappingFragment StoreEntitySet="SalesTerritoryHistory">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
@@ -7418,7 +7418,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ShoppingCartItem">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ShoppingCartItem">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ShoppingCartItem">
               <MappingFragment StoreEntitySet="ShoppingCartItem">
                 <ScalarProperty Name="ShoppingCartItemID" ColumnName="ShoppingCartItemID" />
                 <ScalarProperty Name="ShoppingCartID" ColumnName="ShoppingCartID" />
@@ -7430,7 +7430,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SpecialOffer">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SpecialOffer">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SpecialOffer">
               <MappingFragment StoreEntitySet="SpecialOffer">
                 <ScalarProperty Name="SpecialOfferID" ColumnName="SpecialOfferID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -7447,7 +7447,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SpecialOfferProduct">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.SpecialOfferProduct">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.SpecialOfferProduct">
               <MappingFragment StoreEntitySet="SpecialOfferProduct">
                 <ScalarProperty Name="SpecialOfferID" ColumnName="SpecialOfferID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -7457,7 +7457,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Store">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.Store">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.Store">
               <MappingFragment StoreEntitySet="Store">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7469,7 +7469,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductDocument">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.ProductDocument">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.ProductDocument">
               <MappingFragment StoreEntitySet="ProductDocument">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
@@ -7477,7 +7477,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vEmployee">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vEmployee">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vEmployee">
               <MappingFragment StoreEntitySet="vEmployee">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -7501,7 +7501,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vEmployeeDepartment">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vEmployeeDepartment">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vEmployeeDepartment">
               <MappingFragment StoreEntitySet="vEmployeeDepartment">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -7517,7 +7517,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vEmployeeDepartmentHistory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vEmployeeDepartmentHistory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vEmployeeDepartmentHistory">
               <MappingFragment StoreEntitySet="vEmployeeDepartmentHistory">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -7534,7 +7534,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vJobCandidate">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vJobCandidate">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vJobCandidate">
               <MappingFragment StoreEntitySet="vJobCandidate">
                 <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
@@ -7556,7 +7556,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vJobCandidateEducation">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vJobCandidateEducation">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vJobCandidateEducation">
               <MappingFragment StoreEntitySet="vJobCandidateEducation">
                 <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
                 <ScalarProperty Name="Edu_Level" ColumnName="Edu.Level" />
@@ -7575,7 +7575,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vJobCandidateEmployment">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vJobCandidateEmployment">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vJobCandidateEmployment">
               <MappingFragment StoreEntitySet="vJobCandidateEmployment">
                 <ScalarProperty Name="JobCandidateID" ColumnName="JobCandidateID" />
                 <ScalarProperty Name="Emp_StartDate" ColumnName="Emp.StartDate" />
@@ -7592,7 +7592,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vAdditionalContactInfo">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vAdditionalContactInfo">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vAdditionalContactInfo">
               <MappingFragment StoreEntitySet="vAdditionalContactInfo">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -7615,7 +7615,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vStateProvinceCountryRegion">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vStateProvinceCountryRegion">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vStateProvinceCountryRegion">
               <MappingFragment StoreEntitySet="vStateProvinceCountryRegion">
                 <ScalarProperty Name="StateProvinceID" ColumnName="StateProvinceID" />
                 <ScalarProperty Name="StateProvinceCode" ColumnName="StateProvinceCode" />
@@ -7628,7 +7628,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vProductAndDescription">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vProductAndDescription">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vProductAndDescription">
               <MappingFragment StoreEntitySet="vProductAndDescription">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7639,7 +7639,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vProductCategory">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vProductCategory">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vProductCategory">
               <MappingFragment StoreEntitySet="vProductCategory">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
@@ -7650,7 +7650,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vProductModelCatalogDescription">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vProductModelCatalogDescription">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vProductModelCatalogDescription">
               <MappingFragment StoreEntitySet="vProductModelCatalogDescription">
                 <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7681,7 +7681,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vProductModelInstructions">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vProductModelInstructions">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vProductModelInstructions">
               <MappingFragment StoreEntitySet="vProductModelInstructions">
                 <ScalarProperty Name="ProductModelID" ColumnName="ProductModelID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7698,7 +7698,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vVendorWithAddresses">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vVendorWithAddresses">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vVendorWithAddresses">
               <MappingFragment StoreEntitySet="vVendorWithAddresses">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7713,7 +7713,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vVendorWithContacts">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vVendorWithContacts">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vVendorWithContacts">
               <MappingFragment StoreEntitySet="vVendorWithContacts">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7731,7 +7731,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vIndividualCustomer">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vIndividualCustomer">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vIndividualCustomer">
               <MappingFragment StoreEntitySet="vIndividualCustomer">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -7755,7 +7755,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vPersonDemographics">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vPersonDemographics">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vPersonDemographics">
               <MappingFragment StoreEntitySet="vPersonDemographics">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="TotalPurchaseYTD" ColumnName="TotalPurchaseYTD" />
@@ -7774,7 +7774,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vSalesPerson">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vSalesPerson">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vSalesPerson">
               <MappingFragment StoreEntitySet="vSalesPerson">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -7802,7 +7802,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vSalesPersonSalesByFiscalYears">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vSalesPersonSalesByFiscalYears">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vSalesPersonSalesByFiscalYears">
               <MappingFragment StoreEntitySet="vSalesPersonSalesByFiscalYears">
                 <ScalarProperty Name="SalesPersonID" ColumnName="SalesPersonID" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
@@ -7815,7 +7815,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vStoreWithAddresses">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vStoreWithAddresses">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vStoreWithAddresses">
               <MappingFragment StoreEntitySet="vStoreWithAddresses">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7830,7 +7830,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vStoreWithContacts">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vStoreWithContacts">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vStoreWithContacts">
               <MappingFragment StoreEntitySet="vStoreWithContacts">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7848,7 +7848,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vStoreWithDemographics">
-            <EntityTypeMapping TypeName="AdventureWorks2014Model.vStoreWithDemographics">
+            <EntityTypeMapping TypeName="Ejemplos.AdventureWorksModel.vStoreWithDemographics">
               <MappingFragment StoreEntitySet="vStoreWithDemographics">
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -7867,7 +7867,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           </EntitySetMapping>
           <FunctionImportMapping FunctionName="AdventureWorks2014Model.Store.ufnGetContactInformation" FunctionImportName="ufnGetContactInformation">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.ufnGetContactInformation_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.ufnGetContactInformation_Result">
                 <ScalarProperty Name="PersonID" ColumnName="PersonID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -7881,7 +7881,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="AdventureWorks2014Model.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="AdventureWorks2014Model.Store.sp_helpdiagramdefinition">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.sp_helpdiagramdefinition_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.sp_helpdiagramdefinition_Result">
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
               </ComplexTypeMapping>
@@ -7889,7 +7889,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="AdventureWorks2014Model.Store.sp_helpdiagrams">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.sp_helpdiagrams_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.sp_helpdiagrams_Result">
                 <ScalarProperty Name="Database" ColumnName="Database" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -7902,7 +7902,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="AdventureWorks2014Model.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="uspGetBillOfMaterials" FunctionName="AdventureWorks2014Model.Store.uspGetBillOfMaterials">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.uspGetBillOfMaterials_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.uspGetBillOfMaterials_Result">
                 <ScalarProperty Name="ProductAssemblyID" ColumnName="ProductAssemblyID" />
                 <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
                 <ScalarProperty Name="ComponentDesc" ColumnName="ComponentDesc" />
@@ -7916,7 +7916,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="uspGetEmployeeManagers" FunctionName="AdventureWorks2014Model.Store.uspGetEmployeeManagers">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.uspGetEmployeeManagers_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.uspGetEmployeeManagers_Result">
                 <ScalarProperty Name="RecursionLevel" ColumnName="RecursionLevel" />
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -7929,7 +7929,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="uspGetManagerEmployees" FunctionName="AdventureWorks2014Model.Store.uspGetManagerEmployees">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.uspGetManagerEmployees_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.uspGetManagerEmployees_Result">
                 <ScalarProperty Name="RecursionLevel" ColumnName="RecursionLevel" />
                 <ScalarProperty Name="OrganizationNode" ColumnName="OrganizationNode" />
                 <ScalarProperty Name="ManagerFirstName" ColumnName="ManagerFirstName" />
@@ -7942,7 +7942,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="uspGetWhereUsedProductID" FunctionName="AdventureWorks2014Model.Store.uspGetWhereUsedProductID">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.uspGetWhereUsedProductID_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.uspGetWhereUsedProductID_Result">
                 <ScalarProperty Name="ProductAssemblyID" ColumnName="ProductAssemblyID" />
                 <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
                 <ScalarProperty Name="ComponentDesc" ColumnName="ComponentDesc" />
@@ -7962,7 +7962,7 @@ error 6004: The table 'AdventureWorks2014.Production.Document' is referenced by 
           <FunctionImportMapping FunctionImportName="uspUpdateEmployeePersonalInfo" FunctionName="AdventureWorks2014Model.Store.uspUpdateEmployeePersonalInfo" />
           <FunctionImportMapping FunctionImportName="AMA_GetProductsByCategory" FunctionName="AdventureWorks2014Model.Store.AMA_GetProductsByCategory">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="AdventureWorks2014Model.AMA_GetProductsByCategory_Result">
+              <ComplexTypeMapping TypeName="Ejemplos.AdventureWorksModel.AMA_GetProductsByCategory_Result">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Color" ColumnName="Color" />

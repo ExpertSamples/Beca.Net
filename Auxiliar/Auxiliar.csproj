@@ -159,6 +159,7 @@
     <Compile Include="PersonCreditCard.cs">
       <DependentUpon>AWModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PersonCustom.cs" />
     <Compile Include="PersonPhone.cs">
       <DependentUpon>AWModel.tt</DependentUpon>
     </Compile>

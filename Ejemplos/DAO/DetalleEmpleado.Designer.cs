@@ -42,10 +42,11 @@
             // 
             // dtpFechaContratacion
             // 
-            this.dtpFechaContratacion.CustomFormat = "ddmmyyyy";
+            this.dtpFechaContratacion.CustomFormat = "\'dd\'/\'MM\'/\'yyyy\'";
+            this.dtpFechaContratacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaContratacion.Location = new System.Drawing.Point(161, 217);
             this.dtpFechaContratacion.Name = "dtpFechaContratacion";
-            this.dtpFechaContratacion.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaContratacion.Size = new System.Drawing.Size(115, 22);
             this.dtpFechaContratacion.TabIndex = 0;
             // 
             // btnCancelar
@@ -65,6 +66,7 @@
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtFirstName
             // 

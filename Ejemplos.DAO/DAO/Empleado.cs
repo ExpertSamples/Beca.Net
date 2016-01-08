@@ -11,8 +11,14 @@ using System.Threading.Tasks;
 
 namespace Ejemplos.DAO
 {
+
+
     public class Empleado
     {
+        public static string SIN_VALOR = "Sin definir";
+
+        private string cadenaConexion = ConfigurationManager.ConnectionStrings["AdWorks"].ConnectionString;
+
         public Empleado()
         {
 
@@ -22,7 +28,7 @@ namespace Ejemplos.DAO
         {
             Empleados empleados = new Empleados();
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["AdWorks"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 conn.Open();
                 SqlCommand comando = conn.CreateCommand();
@@ -44,6 +50,54 @@ namespace Ejemplos.DAO
 
 
             return empleados;
+        }
+
+        public void Update(Ejemplos.DAO.DataSets.Empleados.PersonRow persona, Ejemplos.DAO.DataSets.Empleados.EmployeeRow empleado)
+        {
+            string sql;
+
+            sql = "update Person.Person set";
+            sql += " FirstName ='" + persona.FirstName+"'";
+            if (persona.MiddleName != Empleado.SIN_VALOR)
+            {
+                sql += " ,MiddleName ='" + persona.MiddleName+"'";
+            }
+            else
+            {
+                sql += " ,MiddleName = NULL";
+            }
+            sql += " ,LastName ='" + persona.LastName+"'";
+            sql += " where BusinessEntityID=" + persona.BusinessEntityID.ToString()+";";
+
+            sql += "update HumanResources.Employee set";
+            sql += " hiredate='" + empleado.HireDate.ToString("yyyyMMdd")+"'";
+            sql += " where BusinessEntityID=" + empleado.BusinessEntityID.ToString() + ";";
+
+            using(SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                SqlTransaction transaccion = conexion.BeginTransaction();
+
+                SqlCommand comando = conexion.CreateCommand();
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                conexion.Open();
+                try
+                {
+                    comando.ExecuteNonQuery();
+                    transaccion.Commit();
+                }
+                catch(Exception ex)
+                {
+                    transaccion.Rollback();
+                }
+
+
+      
+
+                conexion.Close();
+            }
+
         }
     }
 }

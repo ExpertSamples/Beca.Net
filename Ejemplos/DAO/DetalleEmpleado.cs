@@ -12,7 +12,6 @@ namespace Ejemplos.DAO
 {
     public partial class DetalleEmpleado : Form
     {
-        private const string SIN_VALOR = "Sin definir";
 
         public Ejemplos.DAO.DataSets.Empleados.PersonRow Persona { get; set; }
         public Ejemplos.DAO.DataSets.Empleados.EmployeeRow Empleado { get; set; }
@@ -42,13 +41,68 @@ namespace Ejemplos.DAO
             }
             catch(StrongTypingException ex)
             {
-                txtMiddleName.Text = SIN_VALOR;
+                txtMiddleName.Text = DAO.Empleado.SIN_VALOR;
             }
             txtLastName.Text = Persona.LastName;
 
             dtpFechaContratacion.Value = Empleado.HireDate;
 
 
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            List<string> msg = new List<string>();
+
+            if (modificando)
+            {
+                if (String.IsNullOrWhiteSpace(txtFirstName.Text))
+                {
+                    msg.Add("First Name");
+                }
+                if (String.IsNullOrWhiteSpace(txtMiddleName.Text))
+                {
+                    msg.Add("Middle Name");
+                }
+                if (String.IsNullOrWhiteSpace(txtLastName.Text))
+                {
+                    msg.Add("Last Name");
+                }
+
+                if (msg.Count > 0)
+                {
+                    StringBuilder str = new StringBuilder();
+                    str.AppendLine("Debe rellenar los siguientes campos:");
+
+                    foreach (string campo in msg)
+                    {
+                        str.AppendLine(campo);
+                    }
+
+                    MessageBox.Show(str.ToString());
+
+                    return;
+                }
+
+                Persona.FirstName = txtFirstName.Text;
+                Persona.MiddleName = txtMiddleName.Text;
+                Persona.LastName = txtLastName.Text;
+
+                Empleado.HireDate = dtpFechaContratacion.Value;
+
+                Empleado empleado = new DAO.Empleado();
+
+                try
+                {
+                    empleado.Update(Persona, Empleado);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fallo en la actualización del empleado en bbdd.");
+                }
+
+                this.Close();
+            }
         }
     }
 }
