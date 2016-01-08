@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=ANTONIO-WORK\SQLLOCAL;Initial Catalog=AdventureWorks2014;User ID=sa;Password=sasa</Value>
     </Setting>
+    <Setting Name="Nada" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Nada</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
