@@ -16,6 +16,8 @@ namespace Ejemplos.DAO
         public Ejemplos.DAO.DataSets.Empleados.PersonRow Persona { get; set; }
         public Ejemplos.DAO.DataSets.Empleados.EmployeeRow Empleado { get; set; }
 
+        public Person PersonaEF { get; set; }
+
         private bool modificando = false;
 
         public DetalleEmpleado()
@@ -30,6 +32,21 @@ namespace Ejemplos.DAO
                 modificando = true;
                 CargaDatos();
             }
+
+            if (PersonaEF != null)
+            {
+                modificando = true;
+                CargaDatosEF();
+            }
+        }
+
+        private void CargaDatosEF()
+        {
+            txtFirstName.Text = PersonaEF.FirstName;
+            txtMiddleName.Text = PersonaEF.MiddleName;
+            txtLastName.Text = PersonaEF.LastName;
+
+            dtpFechaContratacion.Value = PersonaEF.Employee.HireDate;
         }
 
         private void CargaDatos()
@@ -52,6 +69,8 @@ namespace Ejemplos.DAO
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+
             List<string> msg = new List<string>();
 
             if (modificando)
@@ -84,25 +103,44 @@ namespace Ejemplos.DAO
                     return;
                 }
 
-                Persona.FirstName = txtFirstName.Text;
-                Persona.MiddleName = txtMiddleName.Text;
-                Persona.LastName = txtLastName.Text;
-
-                Empleado.HireDate = dtpFechaContratacion.Value;
-
-                Empleado empleado = new DAO.Empleado();
-
-                try
+                if (PersonaEF != null)
                 {
-                    empleado.Update(Persona, Empleado);
+                    ModificaEF();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Fallo en la actualización del empleado en bbdd.");
-                }
+                    Persona.FirstName = txtFirstName.Text;
+                    Persona.MiddleName = txtMiddleName.Text;
+                    Persona.LastName = txtLastName.Text;
 
+                    Empleado.HireDate = dtpFechaContratacion.Value;
+
+                    Empleado empleado = new DAO.Empleado();
+
+                    try
+                    {
+                        empleado.Update(Persona, Empleado);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Fallo en la actualización del empleado en bbdd.");
+                    }
+                }
                 this.Close();
             }
+        }
+
+        private void ModificaEF()
+        {
+            EM.Empleado empleado = new EM.Empleado();
+
+            PersonaEF.FirstName = txtFirstName.Text;
+            PersonaEF.MiddleName = txtMiddleName.Text;
+            PersonaEF.LastName = txtLastName.Text;
+
+            PersonaEF.Employee.HireDate = dtpFechaContratacion.Value;
+
+            empleado.Update(PersonaEF);
         }
     }
 }

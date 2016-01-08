@@ -54,18 +54,14 @@ namespace Ejemplos.DAO
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            AdventureWorks2014Entities contexto = new AdventureWorks2014Entities();
+            EM.Empleado empleado = new EM.Empleado();
 
-            //contexto.Database.Log = Console.Write;
-
-            var personas = contexto.Person.Where(p => p.Employee != null);
-            
-            List<Person> listado = personas.ToList();
-
-            lstEmpleados.DataSource = listado;
+            lstEmpleados.DataSource = empleado.GetEmpleadosAll();
             lstEmpleados.DisplayMember = "FullName";
 
-            contexto.Dispose();
+
+            //lstEmpleados.DataSource = ;
+            //lstEmpleados.DisplayMember = "FullName";
             //using (AdventureWorks2014Entities contexto = new AdventureWorks2014Entities())
             //{
             //    contexto.Database.Log = Console.Write;
@@ -98,6 +94,20 @@ namespace Ejemplos.DAO
             //    lstEmpleados.DisplayMember = "BusinessEntityId";
             //}
 
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            DetalleEmpleado detalle = new DetalleEmpleado();
+
+            detalle.PersonaEF = (Person)lstEmpleados.SelectedItem;
+
+            detalle.ShowDialog(this);
+
+            EM.Empleado empleado = new EM.Empleado();
+
+            lstEmpleados.DataSource = empleado.GetEmpleadosAll();
+            lstEmpleados.DisplayMember = "FullName";
         }
     }
 }
